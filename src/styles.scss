@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+html,
+body {
+    height: 100%;
+    background-color: #F1F1F1 !important;
+}
+
+.title-page {
+    font-size: x-large;
+
+    span {
+        color: #F48A54;
+    }
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
