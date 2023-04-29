@@ -3,36 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IndicadoresComponent } from './components/indicadores/indicadores.component';
-import { NgbCollapseModule, NgbDatepickerModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { MedicionComponent } from './components/operaciones/medicion/medicion.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { SharedModule } from './shared/shared.module';
-import { ParametrizacionComponent } from './components/operaciones/parametrizacion/parametrizacion.component';
-import { VectorizacionComponent } from './components/operaciones/vectorizacion/vectorizacion.component';
-import { CronogramaComponent } from './components/operaciones/cronograma/cronograma.component';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from './material/material.module';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ProjectModule } from './appui/project/project.module';
+import { IndicadoresComponent } from './appui/project/indicadores/indicadores.component';
+import { NgBootstrapModule } from './ng-bootstrap/ng-bootstrap.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    IndicadoresComponent,
-    PageNotFoundComponent,
-    MedicionComponent,
-    ParametrizacionComponent,
-    VectorizacionComponent,
-    CronogramaComponent
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
-    NgbCollapseModule,
-    NgbDatepickerModule,
+    MaterialModule,
+    NgBootstrapModule,
     SharedModule,
     FormsModule,
+    BrowserAnimationsModule,
+    ProjectModule,
   ],
+  declarations: [AppComponent, IndicadoresComponent, PageNotFoundComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

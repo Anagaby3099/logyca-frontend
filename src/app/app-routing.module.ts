@@ -1,28 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ROUTES_CONFIG } from './constantes/routes.const';
-import { IndicadoresComponent } from './components/indicadores/indicadores.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { MedicionComponent } from './components/operaciones/medicion/medicion.component';
-import { ParametrizacionComponent } from './components/operaciones/parametrizacion/parametrizacion.component';
-import { VectorizacionComponent } from './components/operaciones/vectorizacion/vectorizacion.component';
-import { CronogramaComponent } from './components/operaciones/cronograma/cronograma.component';
+
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { IndicadoresComponent } from './appui/project/indicadores/indicadores.component';
+import { ScheduleComponent } from './appui/project/schedule/schedule.component';
+import { ParameterizationComponent } from './appui/project/operaciones/parameterization/parameterization.component';
+import { VectorizationComponent } from './appui/project/operaciones/vectorization/vectorizacion.component';
+import { MeasuringComponent } from './appui/project/operaciones/measuring/measuring.component';
 
 const routes: Routes = [
   { path: ROUTES_CONFIG[0].path, component: IndicadoresComponent },
   {
-    path: ROUTES_CONFIG[1].path, children: [
-      { path: ROUTES_CONFIG[1].child[0].path, component: ParametrizacionComponent },
-      { path: ROUTES_CONFIG[1].child[1].path, component: VectorizacionComponent },
-      { path: ROUTES_CONFIG[1].child[2].path, component: CronogramaComponent },
-      { path: ROUTES_CONFIG[1].child[3].path, component: MedicionComponent },
-    ]
+    path: ROUTES_CONFIG[1].path,
+    children: [
+      {
+        path: ROUTES_CONFIG[1].child[0].path,
+        component: ParameterizationComponent,
+      },
+      {
+        path: ROUTES_CONFIG[1].child[1].path,
+        component: VectorizationComponent,
+      },
+      { path: ROUTES_CONFIG[1].child[2].path, component: ScheduleComponent },
+      { path: ROUTES_CONFIG[1].child[3].path, component: MeasuringComponent },
+    ],
   },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
