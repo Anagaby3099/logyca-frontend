@@ -1,0 +1,78 @@
+<app-operations rutaSeleccionada="parametrizacion"></app-operations>
+<div class="row">
+  <div class="col-md-12">
+    <h4 class="mb-3">Maestro productos</h4>
+    <mat-accordion>
+      <mat-expansion-panel
+        class="mat-expansion-custom"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header
+          [collapsedHeight]="customCollapsedHeight"
+          [expandedHeight]="customExpandedHeight"
+        >
+          <mat-panel-title> Cargar Maestros </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <span>Productos</span>
+
+          <p>Consultar los productos en Logyca colabora</p>
+
+          <button class="btn mx-2 btn-warning" type="button">
+            Exportar plantilla
+          </button>
+          <button class="btn mx-2 btn-warning" type="button">
+            Importar plantilla
+          </button>
+        </div>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        class="mat-expansion-custom"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header
+          [collapsedHeight]="customCollapsedHeight"
+          [expandedHeight]="customExpandedHeight"
+        >
+          <mat-panel-title> Consultar Maestros </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>I'm visible because I am open</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <div class="col-md-12">
+      <h4 class="mb-3">Maestro localización</h4>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          class="mat-expansion-custom"
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header
+            [collapsedHeight]="customCollapsedHeight"
+            [expandedHeight]="customExpandedHeight"
+          >
+            <mat-panel-title> Cargar Maestros </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel
+          class="mat-expansion-custom"
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header
+            [collapsedHeight]="customCollapsedHeight"
+            [expandedHeight]="customExpandedHeight"
+          >
+            <mat-panel-title> Cargar Maestros </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>
