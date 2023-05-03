@@ -6,7 +6,7 @@ import { ScheduleModule } from './schedule/schedule.module';
 import { OperationsModule } from './operaciones/operations.module';
 
 @NgModule({
-  imports: [CommonModule, ScheduleModule, OperationsModule],
+  imports: [CommonModule, FormsModule, ScheduleModule, OperationsModule],
   declarations: [],
   exports: [],
 })
