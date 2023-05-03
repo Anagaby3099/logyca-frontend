@@ -1,18 +1,54 @@
 <div class="d-flex align-items-center title-page">
-    <span class="fa fa-right-from-bracket"></span>
-    <p class="fw-bold m-0 px-2">Operaciones</p>
+  <span class="fa fa-right-from-bracket"></span>
+  <p class="fw-bold m-0 px-2">Operaciones</p>
 </div>
 <div class="mx-4">
-    <p>Aquí podrás obtener información del proceso de vectorización, solicitud de estado, cronograma y medición
+  <p>
+    Aquí podrás obtener información del proceso de vectorización, solicitud de
+    estado, cronograma y medición
+  </p>
+  <div class="d-flex mb-4">
+    <p
+      class="navigator-title m-0 px-2"
+      [ngClass]="{ active: esSeleccionada('parametrizacion') }"
+      (click)="navegar('parametrizacion')"
+    >
+      Parametrización
     </p>
-    <div class="d-flex mb-4">
-        <p class="navigator-title m-0 px-2" [ngClass]="{'active': esSeleccionada('parametrizacion')}"
-            (click)="navegar('parametrizacion')">Parametrización</p>
-        <p class="navigator-title m-0 px-2" (click)="navegar('vectorizacion')"
-            [ngClass]="{'active': esSeleccionada('vectorizacion')}">Vectorización</p>
-        <p class="navigator-title m-0 px-2" (click)="navegar('cronograma')"
-            [ngClass]="{'active': esSeleccionada('cronograma')}">Cronograma</p>
-        <p class="navigator-title m-0 px-2" (click)="navegar('medicion')"
-            [ngClass]="{'active': esSeleccionada('medicion')}">Medición</p>
-    </div>
+    <p
+      class="navigator-title m-0 px-2"
+      (click)="navegar('vectorizacion')"
+      [ngClass]="{ active: esSeleccionada('vectorizacion') }"
+    >
+      Vectorización
+    </p>
+    <p
+      class="navigator-title m-0 px-2"
+      (click)="navegar('cronograma')"
+      [ngClass]="{ active: esSeleccionada('cronograma') }"
+    >
+      Cronograma
+    </p>
+    <p
+      class="navigator-title m-0 px-2"
+      (click)="navegar('medicion')"
+      [ngClass]="{ active: esSeleccionada('medicion') }"
+    >
+      Medición
+    </p>
+    <p
+      class="navigator-title m-0 px-2"
+      (click)="navegar('solicitudes')"
+      [ngClass]="{ active: esSeleccionada('solicitudes') }"
+    >
+      Solicitud de estado
+    </p>
+    <p
+      class="navigator-title m-0 px-2"
+      (click)="navegar('productos')"
+      [ngClass]="{ active: esSeleccionada('productos') }"
+    >
+      Productos
+    </p>
+  </div>
 </div>

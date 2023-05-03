@@ -8,14 +8,33 @@ import { ParameterizationComponent } from './parameterization/parameterization.c
 import { MaterialModule } from 'src/app/material/material.module';
 import { VectorizationComponent } from './vectorization/vectorizacion.component';
 import { NgBootstrapModule } from 'src/app/ng-bootstrap/ng-bootstrap.module';
+import { ProductComponent } from './product/product.component';
+import { RequestComponent } from './request/request.component';
+import { TableModule } from 'primeng/table';
+import { TagModule } from 'primeng/tag';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { HttpClientModule } from '@angular/common/http';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, MaterialModule, NgBootstrapModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MaterialModule,
+    NgBootstrapModule,
+    TableModule,
+    TagModule,
+    ProgressBarModule,
+    HttpClientModule,
+    ComponentsModule
+  ],
   declarations: [
     OperationsComponent,
     MeasuringComponent,
     ParameterizationComponent,
-    VectorizationComponent
+    VectorizationComponent,
+    ProductComponent,
+    RequestComponent,
   ],
   exports: [OperationsComponent],
 })
