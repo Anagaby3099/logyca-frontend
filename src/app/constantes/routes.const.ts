@@ -12,6 +12,8 @@ export const ROUTES_CONFIG: IRuta[] = [
             { text: 'Vectorización', path: 'vectorizacion', child: [] },
             { text: 'Cronograma', path: 'cronograma', child: [] },
             { text: 'Medición', path: 'medicion', child: [] },
+            { text: 'Solicitud de estado', path: 'solicitudes', child: [] },
+            { text: 'Productos', path: 'productos', child: [] },
         ]
     },
     { text: 'administración', path: 'administracion', icon: '', child: [] },
