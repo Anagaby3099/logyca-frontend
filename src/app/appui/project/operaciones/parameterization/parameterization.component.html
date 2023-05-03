@@ -1,6 +1,6 @@
 <app-operations rutaSeleccionada="parametrizacion"></app-operations>
-<div class="row">
-  <div class="col-md-12">
+<div class="container">
+  <div>
     <h4 class="mb-3">Maestro productos</h4>
     <mat-accordion>
       <mat-expansion-panel
@@ -9,20 +9,25 @@
         (closed)="panelOpenState = false"
       >
         <mat-expansion-panel-header
+          class="mat-expansion-header"
           [collapsedHeight]="customCollapsedHeight"
           [expandedHeight]="customExpandedHeight"
         >
           <mat-panel-title> Cargar Maestros </mat-panel-title>
         </mat-expansion-panel-header>
-        <div>
-          <span>Productos</span>
+        <div class="mat-expansion-body">
+          <h6>Productos</h6>
 
           <p>Consultar los productos en Logyca colabora</p>
 
-          <button class="btn mx-2 btn-warning" type="button">
+          <button
+            class="btn"
+            style="background: #f24405; color: #fff"
+            type="button"
+          >
             Exportar plantilla
           </button>
-          <button class="btn mx-2 btn-warning" type="button">
+          <button class="btn mx-3 btn-outline-dark" type="button">
             Importar plantilla
           </button>
         </div>
@@ -34,12 +39,28 @@
         (closed)="panelOpenState = false"
       >
         <mat-expansion-panel-header
+          class="mat-expansion-header"
           [collapsedHeight]="customCollapsedHeight"
           [expandedHeight]="customExpandedHeight"
         >
           <mat-panel-title> Consultar Maestros </mat-panel-title>
         </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
+        <div class="mat-expansion-body">
+          <h6>Productos</h6>
+
+          <p>Consultar los productos en Logyca colabora</p>
+
+          <button
+            class="btn"
+            style="background: #f24405; color: #fff"
+            type="button"
+          >
+            Exportar plantilla
+          </button>
+          <button class="btn mx-3 btn-outline-dark" type="button">
+            Importar plantilla
+          </button>
+        </div>
       </mat-expansion-panel>
     </mat-accordion>
     <div class="col-md-12">
@@ -52,12 +73,28 @@
           (closed)="panelOpenState = false"
         >
           <mat-expansion-panel-header
+            class="mat-expansion-header"
             [collapsedHeight]="customCollapsedHeight"
             [expandedHeight]="customExpandedHeight"
           >
             <mat-panel-title> Cargar Maestros </mat-panel-title>
           </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
+          <div class="mat-expansion-body">
+            <h6>Productos</h6>
+
+            <p>Consultar los productos en Logyca colabora</p>
+
+            <button
+              class="btn"
+              style="background: #f24405; color: #fff"
+              type="button"
+            >
+              Exportar plantilla
+            </button>
+            <button class="btn mx-3 btn-outline-dark" type="button">
+              Importar plantilla
+            </button>
+          </div>
         </mat-expansion-panel>
         <mat-expansion-panel
           class="mat-expansion-custom"
@@ -65,12 +102,28 @@
           (closed)="panelOpenState = false"
         >
           <mat-expansion-panel-header
+            class="mat-expansion-header"
             [collapsedHeight]="customCollapsedHeight"
             [expandedHeight]="customExpandedHeight"
           >
             <mat-panel-title> Cargar Maestros </mat-panel-title>
           </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
+          <div class="mat-expansion-body">
+            <h6>Productos</h6>
+
+            <p>Consultar los productos en Logyca colabora</p>
+
+            <button
+              class="btn"
+              style="background: #f24405; color: #fff"
+              type="button"
+            >
+              Exportar plantilla
+            </button>
+            <button class="btn mx-3 btn-outline-dark" type="button">
+              Importar plantilla
+            </button>
+          </div>
         </mat-expansion-panel>
       </mat-accordion>
     </div>
