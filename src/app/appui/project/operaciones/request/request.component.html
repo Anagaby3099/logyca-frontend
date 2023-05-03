@@ -1,0 +1,53 @@
+<app-operations rutaSeleccionada="solicitudes"></app-operations>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="d-flex">
+        <app-input-search [placeHolderTxt]="'Buscar'"></app-input-search>
+        <button type="button" class="btn btn-outline-dark mx-2">
+          <i class="bi bi-funnel"></i>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-8 d-flex justify-content-end">
+      <button
+        class="btn"
+        style="background: #f24405; color: #fff"
+        type="button"
+      >
+        Crear Solicitud
+      </button>
+    </div>
+  </div>
+
+  <div class="app-table">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th># Solicitud</th>
+          <th>Usuario</th>
+          <th>Fecha</th>
+          <th>Plantilla adjunta</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index">
+          <td>{{ user.id_sol }}</td>
+          <td>{{ user.user }}</td>
+          <td>{{ user.date }}</td>
+          <td>
+            {{ user.add }}
+          </td>
+          <td>
+            <div class="status-content" [ngClass]="getClassStatus(user.status)">
+              {{ user.status }}
+              <div class="status-content-circle"></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
