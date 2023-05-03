@@ -1,71 +1,90 @@
 <!-- top navbar -->
-<nav class="navbar" style="background-color: #E2E2E2;">
+<nav class="navbar sidenav">
   <div class="container-fluid">
-    <a class="navbar-brand text-decoration-none">
-      <button class="navbar-toggler" type="button" (click)="toogleSideBar()">
-        <span class="fa-solid fa-bars"></span>
+    <a class="navbar-brand d-flex align-items-center text-decoration-none">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
       </button>
       <span class="mx-2 fw-bolder text-decoration-none">AGOTADOS</span>
     </a>
     <form class="d-flex" role="search">
-      <a href="#" class="d-flex text-decoration-none align-items-center" style="color: inherit;">
+      <a
+        href="#"
+        class="d-flex text-decoration-none align-items-center"
+        style="color: inherit"
+      >
         <span class="fa fa-globe"></span>
         <p class="m-0 px-2">ES</p>
       </a>
-      <button type="button" class="align-items-center btn btn-light d-flex flex-row">
+      <button
+        type="button"
+        class="align-items-center btn btn-light d-flex flex-row"
+      >
         <span class="fa fa-right-from-bracket"></span>
         <p class="m-0 px-2">Cerrar sesión</p>
       </button>
     </form>
   </div>
 </nav>
-<!-- This container contains the sidebar
-and main content of the page -->
-<!-- h-100 takes the full height of the body-->
-<div class="container-fluid h-100">
-  <div class="row">
-    <div class="col-lg-2 col-md-3 col-sm-12" [ngClass]="{'hide' : !showSideBar}" id="navbarTogglerDemo01">
-      <div class="mt-4">
-        <img [src]="rutaImg" class="rounded-circle" alt="">
-        <h4>Marcela Méndez</h4>
-        <h6>Administrador</h6>
-      </div>
-      <!-- Navigation links in sidebar-->
-      <a [routerLink]="rutas[0].path" href="#" class="text-decoration-none">
-        <span class="fa-regular fa-object-ungroup"></span>
-        <p class="fw-bolder">Indicadores</p>
-      </a>
-      <a class="text-decoration-none" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
-        aria-expanded="false" aria-controls="multiCollapseExample1">
-        <span class="fa fa-diagram-project"></span>
-        <p class="fw-bolder">Operaciones</p>
-      </a>
-      <div class="collapse multi-collapse" id="multiCollapseExample1">
-        <a *ngFor="let rutaTemp of rutas[1].child" [routerLink]="rutas[1].path + '/' + rutaTemp.path" href="#"
-          class="text-decoration-none fw-normal">{{rutaTemp.text}}</a>
-      </div>
-      <a [routerLink]="rutas[2].path" href="#" class="text-decoration-none">
-        <span class="fa fa-clipboard-list"></span>
-        <p class="fw-bolder">Administración</p>
-      </a>
-      <a [routerLink]="rutas[3].path" href="#" class="text-decoration-none">
-        <span class="fa-solid fa-screwdriver-wrench"></span>
-        <p class="fw-bolder">Centro de soluciones</p>
-      </a>
-      <a [routerLink]="rutas[4].path" href="#" class="text-decoration-none">
-        <span class="fa-regular fa-object-ungroup"></span>
-        <p class="fw-bolder">Venta y configuración</p>
-      </a>
+
+<mat-sidenav-container class="container-content">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav-panel">
+    <div class="mt-4 text-center">
+      <img [src]="rutaImg" class="rounded-circle" alt="" />
+      <h4>Marcela Méndez</h4>
+      <h6>Administrador</h6>
     </div>
-    <!--Contains the main content
-        of the webpage-->
-    <div [ngClass]="{'col-lg-10 col-md-9' : showSideBar, 'col-lg-12 col-md-12': !showSideBar}" class="col-sm-12"
-      style="text-align: justify;">
-      <div class="card h-100">
-        <div class="card-body">
-          <router-outlet></router-outlet>
-        </div>
-      </div>
+
+    <mat-nav-list>
+      <a routerLink="./indicadores" mat-list-item>
+        <span>Indicadores</span>
+      </a>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          class="mat-expansion-panel-custom mat-elevation-z0"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span>Operaciones</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a mat-list-item routerLink="./operaciones/parametrizacion"
+              >Parametrización</a
+            >
+            <a mat-list-item routerLink="./operaciones/vectorizacion"
+              >Vectorización</a
+            >
+            <a mat-list-item routerLink="./operaciones/cronograma"
+              >Cronograma</a
+            >
+            <a mat-list-item routerLink="./operaciones/medicion">Medición</a>
+            <a mat-list-item routerLink="./operaciones/solicitudes"
+              >Solicitud de estado</a
+            >
+            <a mat-list-item routerLink="./operaciones/productos">Productos</a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <a routerLink="./administracion" mat-list-item>
+        <span>Administracion</span>
+      </a>
+
+      <a routerLink="./centro-de-soluciones" mat-list-item>
+        <span>Centro de soluciones</span>
+      </a>
+
+      <a routerLink="./venta-y-configuracion" mat-list-item>
+        <span>Venta y configuración</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="container-app">
+      <router-outlet></router-outlet>
     </div>
-  </div>
-</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

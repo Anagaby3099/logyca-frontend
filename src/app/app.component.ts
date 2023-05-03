@@ -4,7 +4,7 @@ import { IRuta, ROUTES_CONFIG } from './constantes/routes.const';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   showSideBar: boolean = true;

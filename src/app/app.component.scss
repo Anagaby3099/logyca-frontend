@@ -1,3 +1,45 @@
+.sidenav {
+    height: 72px;
+    background-color: #e2e2e2;
+}
+
+.sidenav-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+}
+
+.container-app {
+    padding: 0px 30px;
+    height: calc(100vh - 84px); 
+}
+
+.mat-expansion-panel-custom {
+    border-radius: 0px !important;
+    box-shadow: none !important;
+
+    &.mat-expansion-panel-spacing {
+      margin: 0px;
+    }
+
+    .mat-expansion-panel-body {
+      padding: 0px;
+    }
+
+    .mat-expansion-panel-header {
+      height: 48px;
+      padding: 0px 24px 0px 16px;
+    }
+
+    .mat-expansion-panel-header-title {
+      color: rgba(0,0,0,0.87);
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+
 #navbarTogglerDemo01 {
     height: 100vh;
     text-align: center;
