@@ -1,0 +1,44 @@
+.app-table {
+    margin: 30px 0px;
+}
+
+.status-content {
+    width: 120px;
+    height: 35px;
+    display: flex;
+    padding: 0px 12px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+  }
+  
+  .status-content-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+  .status-content-active {
+    background: #E4F5FF;
+  }
+  
+  .status-content-active .status-content-circle {
+    background-color: #008CDB;
+  }
+  
+  .status-content-resolve {
+    background: #DBF2D5;
+  }
+  
+  .status-content-resolve .status-content-circle {
+    background: #2CBF04;
+  }
+  
+  .status-content-course {
+    background: #FFF1E4;
+  }
+  
+  .status-content-course .status-content-circle {
+    background: #F24405;
+  }
