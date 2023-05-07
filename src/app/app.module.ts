@@ -6,25 +6,23 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from './shared/shared.module';
-import { FormsModule } from '@angular/forms';
-import { MaterialModule } from './material/material.module';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { ProjectModule } from './appui/project/project.module';
-import { IndicadoresComponent } from './appui/project/indicadores/indicadores.component';
-import { NgBootstrapModule } from './ng-bootstrap/ng-bootstrap.module';
+import { LoginModule } from './auth/login/login.module';
+import { HomeComponent } from './pages/home/home.component';
+import { OperationsModule } from './appui/project/operations/operations.module';
+import { IndicatorsModule } from './appui/project/indicators/indicators.module';
+
+const APP_CONTAINERS = [HomeComponent, PageNotFoundComponent];
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
-    NgBootstrapModule,
     SharedModule,
-    FormsModule,
     BrowserAnimationsModule,
-    ProjectModule,
+    LoginModule,
   ],
-  declarations: [AppComponent, IndicadoresComponent, PageNotFoundComponent],
+  declarations: [AppComponent, APP_CONTAINERS],
   providers: [],
   bootstrap: [AppComponent],
 })
