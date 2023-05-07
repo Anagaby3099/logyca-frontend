@@ -1,0 +1,35 @@
+<div class="d-flex align-items-center title-page">
+  <span class="fa fa-right-from-bracket"></span>
+  <p class="fw-bold m-0 px-2">Operaciones</p>
+</div>
+<div class="mx-4">
+  <p>
+    Aquí podrás obtener información del proceso de vectorización, solicitud de
+    estado, cronograma y medición
+  </p>
+  <mat-tab-group
+    mat-stretch-tabs="false"
+    mat-align-tabs="start"
+    [selectedIndex]="selected_index"
+    (selectedTabChange)="updateRouteParam($event.index)"
+  >
+    <mat-tab label="Parametrización">
+      <app-parameterization></app-parameterization>
+    </mat-tab>
+    <mat-tab label="Vectorización">
+      <app-vectorization></app-vectorization>
+    </mat-tab>
+    <mat-tab label="Cronograma">
+      <app-schedule></app-schedule>
+    </mat-tab>
+    <mat-tab label="Medicion">
+      <app-measuring></app-measuring>
+    </mat-tab>
+    <mat-tab label="Solicitud de estado">
+      <app-request></app-request>
+    </mat-tab>
+    <mat-tab label="Productos">
+      <app-product></app-product>
+    </mat-tab>
+  </mat-tab-group>
+</div>
