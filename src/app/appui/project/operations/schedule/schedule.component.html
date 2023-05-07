@@ -1,0 +1,144 @@
+<div class="container">
+  <h4>Creación de cronograma</h4>
+  <form class="d-flex justify-content-between">
+    <div class="row row-cols-sm-auto">
+      <div class="col-12">
+        <div class="dp-hidden position-absolute">
+          <div class="input-group">
+            <input
+              name="datepicker"
+              class="form-control"
+              ngbDatepicker
+              #datepicker="ngbDatepicker"
+              [autoClose]="'outside'"
+              (dateSelect)="onDateSelection($event)"
+              [displayMonths]="2"
+              [dayTemplate]="t"
+              outsideDays="hidden"
+              [startDate]="fromDate!"
+              tabindex="-1"
+            />
+            <ng-template #t let-date let-focused="focused">
+              <span
+                class="custom-day"
+                [class.focused]="focused"
+                [class.range]="isRange(date)"
+                [class.faded]="isHovered(date) || isInside(date)"
+                (mouseenter)="hoveredDate = date"
+                (mouseleave)="hoveredDate = null"
+              >
+                {{ date.day }}
+              </span>
+            </ng-template>
+          </div>
+        </div>
+        <div class="input-group">
+          <input
+            #dpFromDate
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dpFromDate"
+            [value]="formatter.format(fromDate)"
+            (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
+          />
+          <button
+            class="btn btn-outline-secondary bi bi-calendar3"
+            (click)="datepicker.toggle()"
+            type="button"
+          ></button>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="input-group">
+          <input
+            #dpToDate
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dpToDate"
+            [value]="formatter.format(toDate)"
+            (input)="toDate = validateInput(toDate, dpToDate.value)"
+          />
+          <button
+            class="btn btn-outline-secondary bi bi-calendar3"
+            (click)="datepicker.toggle()"
+            type="button"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button class="btn mx-2 btn-warning" type="button">
+        Exportar plantilla
+      </button>
+      <button class="btn mx-2 btn-outline-secondary" type="button">
+        Importar plantilla
+      </button>
+    </div>
+  </form>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" sortable="name">Fecha</th>
+          <th scope="col" sortable="area">Solicitud</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dato of data">
+          <th scope="row">{{ dato.id }}</th>
+          <td>
+            <ngb-highlight [result]="dato.fecha | date"></ngb-highlight>
+          </td>
+          <td><ngb-highlight [result]="dato.solicitud"></ngb-highlight></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex justify-content-between p-2 paginator">
+    <div>
+      <p class="m-0">
+        {{ (page - 1) * pageSize + pageSize }} de {{ total }} productos
+      </p>
+    </div>
+    <div class="d-flex">
+      <div class="d-flex mx-4 align-items-center">
+        <label for="productsPerPage" class="mx-2">Filas por página</label>
+        <select
+          id="productsPerPage"
+          class="form-select"
+          style="width: auto"
+          name="pageSize"
+          [(ngModel)]="pageSize"
+          (change)="updateProductsPerPage()"
+        >
+          <option [ngValue]="5">5</option>
+          <option [ngValue]="10">10</option>
+          <option [ngValue]="50">50</option>
+        </select>
+      </div>
+      <div class="d-flex align-items-center">
+        <p class="mx-4 mb-0">
+          {{ (page - 1) * pageSize + 1 }}-{{ (page - 1) * pageSize + pageSize }}
+        </p>
+        <button
+          type="button"
+          class="btn mx-2"
+          [ngClass]="{ disabled: page == 1 }"
+          (click)="previousPage()"
+        >
+          <span class="fa fa-chevron-left"></span>
+        </button>
+        <button
+          type="button"
+          class="btn mx-2"
+          [ngClass]="{ disabled: (page - 1) * pageSize + pageSize >= total }"
+          (click)="addPage()"
+        >
+          <span class="fa fa-chevron-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
