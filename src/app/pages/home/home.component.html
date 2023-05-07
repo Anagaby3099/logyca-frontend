@@ -1,0 +1,90 @@
+<!-- top navbar -->
+<nav class="navbar sidenav">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center text-decoration-none">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="mx-2 fw-bolder text-decoration-none">AGOTADOS</span>
+    </a>
+    <form class="d-flex" role="search">
+      <a
+        href="#"
+        class="d-flex text-decoration-none align-items-center"
+        style="color: inherit"
+      >
+        <span class="fa fa-globe"></span>
+        <p class="m-0 px-2">ES</p>
+      </a>
+      <button
+        type="button"
+        class="align-items-center btn btn-light d-flex flex-row"
+      >
+        <span class="fa fa-right-from-bracket"></span>
+        <p class="m-0 px-2">Cerrar sesión</p>
+      </button>
+    </form>
+  </div>
+</nav>
+
+<mat-sidenav-container class="container-content">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav-panel">
+    <div class="mt-4 text-center">
+      <img [src]="rutaImg" class="rounded-circle" alt="" />
+      <h4>Marcela Méndez</h4>
+      <h6>Administrador</h6>
+    </div>
+
+    <mat-nav-list>
+      <a routerLink="/indicadores" mat-list-item>
+        <span>Indicadores</span>
+      </a>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          class="mat-expansion-panel-custom mat-elevation-z0"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span>Operaciones</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a mat-list-item [routerLink]="['/operaciones', 'parametrizacion']"
+              >Parametrización</a
+            >
+            <a mat-list-item [routerLink]="['/operaciones', 'vectorizacion']"
+              >Vectorización</a
+            >
+            <a mat-list-item [routerLink]="['/operaciones', 'cronograma']"
+              >Cronograma</a
+            >
+            <a mat-list-item [routerLink]="['/operaciones', 'medicion']">Medición</a>
+            <a mat-list-item [routerLink]="['/operaciones', 'solicitudes']">
+              Solicitud de estado
+            </a>
+            <a mat-list-item [routerLink]="['/operaciones', 'productos']">Productos</a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <a routerLink="./administracion" mat-list-item>
+        <span>Administracion</span>
+      </a>
+
+      <a routerLink="./centro-de-soluciones" mat-list-item>
+        <span>Centro de soluciones</span>
+      </a>
+
+      <a routerLink="./venta-y-configuracion" mat-list-item>
+        <span>Venta y configuración</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="container-app">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
