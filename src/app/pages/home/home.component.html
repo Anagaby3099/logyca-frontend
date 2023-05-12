@@ -18,6 +18,7 @@
       </a>
       <button
         type="button"
+        (click)="logout()"
         class="align-items-center btn btn-light d-flex flex-row"
       >
         <span class="fa fa-right-from-bracket"></span>
@@ -53,7 +54,7 @@
             <a mat-list-item [routerLink]="['/operaciones', 'parametrizacion']"
               >Parametrización</a
             >
-            <a mat-list-item [routerLink]="['/operaciones', 'vectorizacion']"
+            <a *appShowForRoles="['Accounting']" mat-list-item [routerLink]="['/operaciones', 'vectorizacion']"
               >Vectorización</a
             >
             <a mat-list-item [routerLink]="['/operaciones', 'cronograma']"
