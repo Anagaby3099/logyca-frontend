@@ -54,17 +54,24 @@
             <a mat-list-item [routerLink]="['/operaciones', 'parametrizacion']"
               >Parametrización</a
             >
-            <a *appShowForRoles="['Accounting']" mat-list-item [routerLink]="['/operaciones', 'vectorizacion']"
+            <a
+              *appShowForRoles="['Accounting']"
+              mat-list-item
+              [routerLink]="['/operaciones', 'vectorizacion']"
               >Vectorización</a
             >
             <a mat-list-item [routerLink]="['/operaciones', 'cronograma']"
               >Cronograma</a
             >
-            <a mat-list-item [routerLink]="['/operaciones', 'medicion']">Medición</a>
+            <a mat-list-item [routerLink]="['/operaciones', 'medicion']"
+              >Medición</a
+            >
             <a mat-list-item [routerLink]="['/operaciones', 'solicitudes']">
               Solicitud de estado
             </a>
-            <a mat-list-item [routerLink]="['/operaciones', 'productos']">Productos</a>
+            <a mat-list-item [routerLink]="['/operaciones', 'productos']"
+              >Productos</a
+            >
           </mat-nav-list>
         </mat-expansion-panel>
       </mat-accordion>
@@ -81,6 +88,10 @@
         <span>Venta y configuración</span>
       </a>
     </mat-nav-list>
+
+    <div class="logo-absolute text-center">
+      <img src="../../../assets/logo-small.png" alt="logo" />
+    </div>
   </mat-sidenav>
 
   <mat-sidenav-content>
