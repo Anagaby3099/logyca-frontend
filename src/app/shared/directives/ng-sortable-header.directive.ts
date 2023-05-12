@@ -1,7 +1,15 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
-import { SortColumn, SortDirection, SortEvent } from 'src/app/models/ng-bootstrap';
+import {
+  SortColumn,
+  SortDirection,
+  SortEvent,
+} from '@app/models/ng-bootstrap.model';
 
-const rotate: { [key: string]: SortDirection } = { asc: 'desc', desc: '', '': 'asc' };
+const rotate: { [key: string]: SortDirection } = {
+  asc: 'desc',
+  desc: '',
+  '': 'asc',
+};
 
 @Directive({
   selector: 'th[sortable]',
@@ -21,5 +29,4 @@ export class NgSortableHeaderDirective {
     this.direction = rotate[this.direction];
     this.sort.emit({ column: this.sortable, direction: this.direction });
   }
-
 }
