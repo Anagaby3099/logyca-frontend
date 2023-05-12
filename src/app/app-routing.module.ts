@@ -5,8 +5,16 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { IndicatorsComponent } from './appui/project/indicators/indicators.component';
+import { AuthGuard } from './auth/guards/isLoggedInGuard/is-logged-in.guard';
 
 const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Login Page',
+    },
+  },
   {
     path: '',
     component: HomeComponent,
@@ -18,7 +26,7 @@ const routes: Routes = [
       },
       {
         path: 'indicadores',
-        component: IndicatorsComponent
+        component: IndicatorsComponent,
       },
       {
         path: 'operaciones',
@@ -28,13 +36,6 @@ const routes: Routes = [
           ),
       },
     ],
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    data: {
-      title: 'Login Page',
-    },
   },
   { path: '**', component: PageNotFoundComponent },
 ];
