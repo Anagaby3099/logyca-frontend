@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { IndicatorsComponent } from './appui/project/indicators/indicators.component';
 import { AuthGuard } from './auth/guards/isLoggedInGuard/is-logged-in.guard';
+import { AccountComponent } from './appui/project/account/account.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
           import('./appui/project/operations/operations.module').then(
             (m) => m.OperationsModule
           ),
+      },
+      {
+        path: 'cuenta',
+        component: AccountComponent
       },
     ],
   },

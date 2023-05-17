@@ -20,11 +20,14 @@ const APP_CONTAINERS = [HomeComponent, PageNotFoundComponent];
     SharedModule,
     BrowserAnimationsModule,
   ],
-  declarations: [AppComponent, APP_CONTAINERS, LoginComponent, ShowForRolesDirective],
+  declarations: [
+    AppComponent,
+    APP_CONTAINERS,
+    LoginComponent,
+    ShowForRolesDirective,
+  ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [
-    ShowForRolesDirective
-  ],
+  exports: [ShowForRolesDirective],
 })
 export class AppModule {}

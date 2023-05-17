@@ -77,15 +77,15 @@
       </mat-accordion>
 
       <a routerLink="./administracion" mat-list-item>
-        <span>Administracion</span>
+        <span>Usuarios</span>
       </a>
 
       <a routerLink="./centro-de-soluciones" mat-list-item>
         <span>Centro de soluciones</span>
       </a>
 
-      <a routerLink="./venta-y-configuracion" mat-list-item>
-        <span>Venta y configuración</span>
+      <a routerLink="./cuenta" mat-list-item>
+        <span>Cuenta</span>
       </a>
     </mat-nav-list>
 
@@ -94,9 +94,7 @@
     </div>
   </mat-sidenav>
 
-  <mat-sidenav-content>
-    <div class="container-app">
-      <router-outlet></router-outlet>
-    </div>
+  <mat-sidenav-content class="container-app">
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
