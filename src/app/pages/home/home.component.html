@@ -29,7 +29,13 @@
 </nav>
 
 <mat-sidenav-container class="container-content">
-  <mat-sidenav #sidenav mode="side" opened class="sidenav-panel">
+  <mat-sidenav
+    #sidenav
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [fixedInViewport]="mobileQuery.matches"
+    opened
+    class="sidenav-panel"
+  >
     <div class="mt-4 text-center">
       <img [src]="rutaImg" class="rounded-circle" alt="" />
       <h4>Marcela Méndez</h4>
@@ -94,7 +100,9 @@
     </div>
   </mat-sidenav>
 
-  <mat-sidenav-content class="container-app">
-    <router-outlet></router-outlet>
+  <mat-sidenav-content>
+    <div class="container__app">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,17 +1,14 @@
 <form (ngSubmit)="search()" autocomplete="off">
-  <div class="input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text">
-        <i class="bi bi-search"></i>
-      </span>
-    </div>
+  <mat-form-field class="form-field">
     <input
+      matInput
       type="text"
-      name="term"
-      class="form-control"
       [(ngModel)]="term"
       (input)="onKeyPress()"
       [placeholder]="placeHolderTxt"
     />
-  </div>
+    <button matSuffix mat-icon-button aria-label="Clear">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
 </form>

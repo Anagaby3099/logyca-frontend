@@ -1,23 +1,17 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="d-flex">
-        <app-input-search [placeHolderTxt]="'Buscar'"></app-input-search>
-        <button type="button" class="btn btn-outline-dark mx-2">
-          <i class="bi bi-funnel"></i>
-        </button>
-      </div>
-    </div>
-    <div class="col-md-8 d-flex justify-content-end">
-      <button
-        class="btn"
-        style="background: #f24405; color: #fff"
-        type="button"
-      >
-        Crear Solicitud
-      </button>
-    </div>
-  </div>
+  <mat-grid-list
+    [cols]="breakpoint"
+    rowHeight="2:0.5"
+    (window:resize)="onResize($event)"
+  >
+    <mat-grid-tile class="justify-start">
+      <app-input-search [placeHolderTxt]="'Buscar'"></app-input-search>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <button mat-button class="mat-button-primary">Crear Solicitud</button>
+    </mat-grid-tile>
+  </mat-grid-list>
 
   <div class="app-table">
     <table class="table table-hover">

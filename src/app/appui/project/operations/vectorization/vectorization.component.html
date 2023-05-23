@@ -1,65 +1,76 @@
-<div class="container">
-  <div>
-    <mat-accordion>
-      <mat-expansion-panel
-        class="mat-expansion-custom"
-        (opened)="panelOpenState = true"
-        (closed)="panelOpenState = false"
+<section class="section">
+  <mat-accordion class="mat__accordion">
+    <mat-expansion-panel
+      class="mat__expansion"
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header
+        class="mat__expansion-header"
+        [collapsedHeight]="customCollapsedHeight"
+        [expandedHeight]="customExpandedHeight"
       >
-        <mat-expansion-panel-header
-          class="mat-expansion-header"
-          [collapsedHeight]="customCollapsedHeight"
-          [expandedHeight]="customExpandedHeight"
-        >
-          <mat-panel-title> Vectorización </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
+        <mat-panel-title> Vectorización </mat-panel-title>
+      </mat-expansion-panel-header>
 
-      <mat-expansion-panel
-        class="mat-expansion-custom"
-        (opened)="panelOpenState = true"
-        (closed)="panelOpenState = false"
-      >
-        <mat-expansion-panel-header
-          class="mat-expansion-header"
-          [collapsedHeight]="customCollapsedHeight"
-          [expandedHeight]="customExpandedHeight"
-        >
-          <mat-panel-title> Medición activa </mat-panel-title>
-        </mat-expansion-panel-header>
+      <div class="mat__expansion-body">
         <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
+        <!-- <button class="btn btn-outline-dark">Importar plantilla</button> -->
+      </div>
+    </mat-expansion-panel>
 
-      <mat-expansion-panel
-        class="mat-expansion-custom"
-        (opened)="panelOpenState = true"
-        (closed)="panelOpenState = false"
+    <mat-expansion-panel
+      class="mat__expansion"
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header
+        class="mat__expansion-header"
+        [collapsedHeight]="customCollapsedHeight"
+        [expandedHeight]="customExpandedHeight"
       >
-        <mat-expansion-panel-header
-          class="mat-expansion-header"
-          [collapsedHeight]="customCollapsedHeight"
-          [expandedHeight]="customExpandedHeight"
-        >
-          <mat-panel-title> Medición de datos </mat-panel-title>
-        </mat-expansion-panel-header>
+        <mat-panel-title> Medición activa </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="mat__expansion-body">
         <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
+        <!-- <button class="btn btn-outline-dark">Importar plantilla</button> -->
+      </div>
+    </mat-expansion-panel>
 
-      <mat-expansion-panel
-        class="mat-expansion-custom"
-        (opened)="panelOpenState = true"
-        (closed)="panelOpenState = false"
+    <mat-expansion-panel
+      class="mat__expansion"
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header
+        class="mat__expansion-header"
+        [collapsedHeight]="customCollapsedHeight"
+        [expandedHeight]="customExpandedHeight"
       >
-        <mat-expansion-panel-header
-          class="mat-expansion-header"
-          [collapsedHeight]="customCollapsedHeight"
-          [expandedHeight]="customExpandedHeight"
-        >
-          <mat-panel-title> Cargar Maestros </mat-panel-title>
-        </mat-expansion-panel-header>
+        <mat-panel-title> Medición de datos </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="mat__expansion-body">
         <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
-    </mat-accordion>
-  </div>
-</div>
+        <!-- <button class="btn btn-outline-dark">Importar plantilla</button> -->
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      class="mat__expansion"
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header
+        class="mat__expansion-header"
+        [collapsedHeight]="customCollapsedHeight"
+        [expandedHeight]="customExpandedHeight"
+      >
+        <mat-panel-title> Cargar Maestros </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="mat__expansion-body">
+        <p>I'm visible because I am open</p>
+        <!-- <button class="btn btn-outline-dark">Importar plantilla</button> -->
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</section>

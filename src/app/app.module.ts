@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ShowForRolesDirective } from './auth/directives/show-for-roles.directive';
+import { AccountModule } from './appui/project/account/account.module';
 
 const APP_CONTAINERS = [HomeComponent, PageNotFoundComponent];
 
@@ -19,6 +20,7 @@ const APP_CONTAINERS = [HomeComponent, PageNotFoundComponent];
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
+    AccountModule
   ],
   declarations: [
     AppComponent,

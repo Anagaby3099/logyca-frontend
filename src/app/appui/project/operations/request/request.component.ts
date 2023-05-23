@@ -9,6 +9,7 @@ import { Table } from 'primeng/table';
   styleUrls: ['./request.component.scss'],
 })
 export class RequestComponent implements OnInit {
+  breakpoint!: number;
   @ViewChild('ustable') ustable!: Table;
 
   users = [
@@ -48,7 +49,13 @@ export class RequestComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.breakpoint = window.innerWidth <= 700 ? 1 : 2;
+  }
+
+  onResize(event: any) {
+    this.breakpoint = event.target.innerWidth <= 700 ? 1 : 2;
+  }
 
   tableFilter($event: any) {
     this.ustable.filterGlobal($event.target.value, 'contains');

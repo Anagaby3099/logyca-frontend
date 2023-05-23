@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   exports: [
@@ -17,6 +19,8 @@ import { MatIconModule } from '@angular/material/icon';
     NgBootstrapModule,
     MatCardModule,
     MatIconModule,
+    MatGridListModule,
+    MatInputModule,
   ],
 })
 export class SharedModule {}

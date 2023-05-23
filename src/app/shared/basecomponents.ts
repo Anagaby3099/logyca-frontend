@@ -5,7 +5,7 @@ import { FormGroup } from '@angular/forms';
   selector: 'app-base-comp',
   template: '',
 })
-export class BaseComponents implements OnInit, OnDestroy {
+export class BaseComponents {
   myForm!: FormGroup;
   loadinglist: boolean = false;
 
@@ -16,7 +16,4 @@ export class BaseComponents implements OnInit, OnDestroy {
     this.loadinglist = value;
   }
 
-  ngOnInit(): void {}
-
-  ngOnDestroy(): void {}
 }

@@ -5,26 +5,146 @@
 /* import custom theme */
 @import './assets/styles/custom-theme.scss';
 
+$white: #ffffff;
+$black: #000000;
+$gray-color: #F1F1F1; 
+
+$deep-orange-50: #fbe9e7 !default;
+$deep-orange-100: #ffccbc !default;
+$deep-orange-200: #ffab91 !default;
+$deep-orange-300: #ff8a65 !default;
+$deep-orange-400: #ff7043 !default;
+$deep-orange-500: #ff5722 !default;
+$deep-orange-600: #f4511e !default;
+$deep-orange-700: #e64a19 !default;
+$deep-orange-800: #d84315 !default;
+$deep-orange-900: #bf360c !default;
+$deep-orange-a100: #ff9e80 !default;
+$deep-orange-a200: #ff6e40 !default;
+$deep-orange-a400: #ff3d00 !default;
+$deep-orange-a700: #dd2c00 !default;
+$deep-orange: $deep-orange-500 !default;
+
+$teal-50: #e0f2f1 !default;
+$teal-100: #b2dfdb !default;
+$teal-200: #80cbc4 !default;
+$teal-300: #4db6ac !default;
+$teal-400: #26a69a !default;
+$teal-500: #009688 !default;
+$teal-600: #00897b !default;
+$teal-700: #00796b !default;
+$teal-800: #00695c !default;
+$teal-900: #004d40 !default;
+$teal-a100: #a7ffeb !default;
+$teal-a200: #64ffda !default;
+$teal-a400: #1de9b6 !default;
+$teal-a700: #00bfa5 !default;
+$teal: $teal-500 !default;
+
+
 html,
 body {
     height: 100%;
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: #F1F1F1;
+    background-color: $gray-color;
 }
 
-.title-page {
-    font-size: x-large;
+/* @Global styles */
+.section {
+    margin: 45px 0px;
+}
 
-    span {
-        color: #F48A54;
+.section__header {
+    .section__title {
+        display: flex;
+        align-items: center;
+        font-size: x-large;
+    
+        span {
+            color: $deep-orange-a200;
+        }
+    
+        h4 {
+            margin: 12px;
+        }
     }
+
+    .section__txt {
+        margin-left: 38px;
+    }
+}
+
+
+/* containers */
+.container__app {
+    background: $white;
+    margin: 0px 20px;
+    padding: 25px 25px;
+    height: calc(100vh - 78px) ;
+}
+
+.mat-button-primary {
+    padding: 18px !important;
+    border-radius: 6px !important;
+    background: $deep-orange-600 !important;
+    color: $white !important; 
+}
+
+.mat__accordion {
+    margin: 16px;
+}
+
+.mat__expansion {
+    margin: 5px !important;
+}
+
+.mat__expansion-header {
+  background: #E2E2E2;
+} 
+
+.mat__expansion-body {
+    margin: 20px 0px;
+    padding: 20px 25px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.expansion__body-title {
+  margin-bottom: 15px;  
+}
+
+.mr-min {
+    margin-right: 1.5rem;
+}
+
+.ml-min {
+    margin-left: 1.5rem;
 }
 
 .w-20 {
     width: 20%;
 }
 
+.w-80 {
+    width: 80%;
+}
+
 .w-100 {
     width: 100%;
 }
+
+.left-align {
+    width:100%;
+    text-align:right;
+}
+
+.justify-start .mat-grid-tile-content {
+    display: flex !important;
+    justify-content: start;
+}
+
+.form-field {
+    width: 300px;
+}
+
