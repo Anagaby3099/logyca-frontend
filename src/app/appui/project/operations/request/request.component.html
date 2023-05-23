@@ -1,7 +1,7 @@
-<div class="container">
+<section class="section">
   <mat-grid-list
     [cols]="breakpoint"
-    rowHeight="2:0.5"
+    rowHeight="85px"
     (window:resize)="onResize($event)"
   >
     <mat-grid-tile class="justify-start">
@@ -14,32 +14,44 @@
   </mat-grid-list>
 
   <div class="app-table">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th># Solicitud</th>
-          <th>Usuario</th>
-          <th>Fecha</th>
-          <th>Plantilla adjunta</th>
-          <th>Estado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users; let i = index">
-          <td>{{ user.id_sol }}</td>
-          <td>{{ user.user }}</td>
-          <td>{{ user.date }}</td>
-          <td>
-            {{ user.add }}
-          </td>
-          <td>
-            <div class="status-content" [ngClass]="getClassStatus(user.status)">
-              {{ user.status }}
-              <div class="status-content-circle"></div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
+    <table mat-table [dataSource]="users" class="table table-hover">
+      <ng-container matColumnDef="request">
+        <th mat-header-cell *matHeaderCellDef># Solicitud</th>
+        <td mat-cell *matCellDef="let item">{{ item.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="user">
+        <th mat-header-cell *matHeaderCellDef>Usuario</th>
+        <td mat-cell *matCellDef="let item">{{ item.user }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Fecha</th>
+        <td mat-cell *matCellDef="let item">{{ item.date }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="template">
+        <th mat-header-cell *matHeaderCellDef>Plantilla adjunta</th>
+        <td mat-cell *matCellDef="let item">{{ item.add }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="state">
+        <th mat-header-cell *matHeaderCellDef>Estado</th>
+        <td mat-cell *matCellDef="let item">{{ item.status }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Estado</th>
+        <td mat-cell *matCellDef="let item">
+          <div class="status-content" [ngClass]="getClassStatus(item.status)">
+            {{ item.status }}
+            <div class="status-content-circle"></div>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
   </div>
-</div>
+</section>

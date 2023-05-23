@@ -10,6 +10,7 @@ import { Table } from 'primeng/table';
 })
 export class RequestComponent implements OnInit {
   breakpoint!: number;
+  displayedColumns: string[] = ['request', 'user', 'date', 'template', 'state', 'status'];
   @ViewChild('ustable') ustable!: Table;
 
   users = [

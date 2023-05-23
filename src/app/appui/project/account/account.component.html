@@ -17,7 +17,7 @@
         rowHeight="90px"
         (window:resize)="onResize($event)"
       >
-        <mat-grid-tile class="justify-start">
+        <mat-grid-tile colspan="1" class="justify-start">
           <mat-form-field class="form-field">
             <mat-label>Nombre</mat-label>
             <input
@@ -29,14 +29,14 @@
             <mat-error
               *ngIf="myForm.hasError('name') && !myForm.hasError('required')"
             >
-              Please enter a name email address
+              Please enter a name
             </mat-error>
             <mat-error *ngIf="myForm.hasError('required')">
-              Email is <strong>required</strong>
+              Name is <strong>required</strong>
             </mat-error>
           </mat-form-field>
         </mat-grid-tile>
-        <mat-grid-tile class="justify-start">
+        <mat-grid-tile colspan="1" class="justify-start">
           <mat-form-field class="form-field">
             <mat-label>Cargo</mat-label>
             <input
@@ -47,6 +47,8 @@
             />
           </mat-form-field>
         </mat-grid-tile>
+        <mat-grid-tile colspan="1"> </mat-grid-tile>
+        <mat-grid-tile colspan="1"> </mat-grid-tile>
         <mat-grid-tile class="justify-start">
           <mat-form-field class="form-field">
             <mat-label>Email</mat-label>
@@ -69,6 +71,8 @@
             />
           </mat-form-field>
         </mat-grid-tile>
+        <mat-grid-tile colspan="1"> </mat-grid-tile>
+        <mat-grid-tile colspan="1"> </mat-grid-tile>
         <mat-grid-tile class="justify-start">
           <mat-form-field class="form-field">
             <mat-label>Compañia</mat-label>

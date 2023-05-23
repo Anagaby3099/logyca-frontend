@@ -16,11 +16,11 @@ export class AccountComponent extends BaseComponents implements OnInit {
   }
 
   ngOnInit(): void {
-    this.breakpoint = window.innerWidth <= 700 ? 1 : 2;
+    this.breakpoint = window.innerWidth <= 700 ? 1 : 4;
   }
 
   onResize(event: any) {
-    this.breakpoint = event.target.innerWidth <= 700 ? 1 : 2;
+    this.breakpoint = event.target.innerWidth <= 700 ? 1 : 4;
   }
 
   private createForm() {
