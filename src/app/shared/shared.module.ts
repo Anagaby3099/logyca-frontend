@@ -12,6 +12,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   exports: [
@@ -29,6 +30,7 @@ import { MatTableModule } from '@angular/material/table';
     MatNativeDateModule,
     MatFormFieldModule,
     MatTableModule,
+    MatPaginatorModule,
   ],
 })
 export class SharedModule {}

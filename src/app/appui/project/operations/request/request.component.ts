@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-
-import { SortEvent } from 'primeng/api';
 import { Table } from 'primeng/table';
 
 @Component({
@@ -10,7 +8,14 @@ import { Table } from 'primeng/table';
 })
 export class RequestComponent implements OnInit {
   breakpoint!: number;
-  displayedColumns: string[] = ['request', 'user', 'date', 'template', 'state', 'status'];
+  displayedColumns: string[] = [
+    'request',
+    'user',
+    'date',
+    'template',
+    'state',
+    'status',
+  ];
   @ViewChild('ustable') ustable!: Table;
 
   users = [

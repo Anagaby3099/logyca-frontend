@@ -6,6 +6,7 @@
       [(ngModel)]="term"
       (input)="onKeyPress()"
       [placeholder]="placeHolderTxt"
+      [ngModelOptions]="{standalone: true}"
     />
     <button matSuffix mat-icon-button aria-label="Clear">
       <mat-icon>search</mat-icon>
