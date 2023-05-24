@@ -144,6 +144,11 @@ body {
     justify-content: start;
 }
 
+.justify-end .mat-grid-tile-content {
+    display: flex !important;
+    justify-content: end;
+}
+
 .form-field {
     width: 300px;
 }
