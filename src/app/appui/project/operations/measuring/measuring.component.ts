@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-measuring',
@@ -11,7 +10,7 @@ export class MeasuringComponent {
   model: any;
   date: { year: number; month: number } | any;
 
-  constructor(private calendar: NgbCalendar) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.breakpoint = window.innerWidth <= 700 ? 1 : 4;
