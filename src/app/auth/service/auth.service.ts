@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { User, UserWithToken } from '@app/models';
-import { LoginCredentials } from '@app/models/login-credentials.model';
+import { AppConfig } from '@app/app-config';
+import { User, UserWithToken, LoginCredentials } from '@app/models';
 import { BehaviorSubject, Observable, ignoreElements, tap } from 'rxjs';
 
 const USER_LOCAL_STORAGE_KEY = 'userData';
@@ -15,9 +15,13 @@ export class AuthenticationService {
   private user = new BehaviorSubject<User | null>(null);
   user$ = this.user.asObservable();
 
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
-  login(credentials: LoginCredentials): any {
+  login(credentials: LoginCredentials) {
+    const url = AppConfig.API_ENDPOINT;
+
+    console.log("credentials", url);
+    this.http.post<any>(`${url}/`, {}, {})
     this.redirectToDashboard();
   }
 
