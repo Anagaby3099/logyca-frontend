@@ -9,12 +9,17 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   exports: [
     MatExpansionModule,
     MatTabsModule,
-    MatTableModule,
     MatInputModule,
     MatButtonModule,
     MatIconModule,
@@ -22,6 +27,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatToolbarModule,
     MatListModule,
     MatTooltipModule,
+    MatCardModule,
+    MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
 })
 export class MaterialModule {}
