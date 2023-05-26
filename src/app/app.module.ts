@@ -12,6 +12,12 @@ import { LoginComponent } from './auth/login/login.component';
 import { ShowForRolesDirective } from './auth/directives/show-for-roles.directive';
 import { AccountModule } from './appui/project/account/account.module';
 
+// Interceptors
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './auth-interceptor.service';
+
+
+
 const APP_CONTAINERS = [HomeComponent, PageNotFoundComponent];
 
 @NgModule({
@@ -28,8 +34,14 @@ const APP_CONTAINERS = [HomeComponent, PageNotFoundComponent];
     LoginComponent,
     ShowForRolesDirective,
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
+
   exports: [ShowForRolesDirective],
 })
 export class AppModule {}
