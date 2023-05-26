@@ -19,11 +19,11 @@
             <!-- input user -->
             <mat-form-field class="input__group">
               <mat-label>Usuario</mat-label>
-              <input type="text" formControlName="username" matInput placeholder="Usuario" />
+              <input type="text" formControlName="email" matInput placeholder="Usuario" />
               <mat-icon matPrefix> person </mat-icon>
 
-              <mat-error *ngIf="loginForm.get('username')?.errors && loginForm.get('username')?.touched">
-                {{ getMessageInvalidField('username', 'El usuario') }}
+              <mat-error *ngIf="loginForm.get('email')?.errors && loginForm.get('username')?.touched">
+                {{ getMessageInvalidField('email', 'El email') }}
               </mat-error>
             </mat-form-field>
             <!-- input password -->

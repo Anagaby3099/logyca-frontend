@@ -14,9 +14,7 @@ import { AccountModule } from './appui/project/account/account.module';
 
 // Interceptors
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptorService } from './auth-interceptor.service';
-
-
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 const APP_CONTAINERS = [HomeComponent, PageNotFoundComponent];
 
@@ -37,11 +35,11 @@ const APP_CONTAINERS = [HomeComponent, PageNotFoundComponent];
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
+      useClass: AuthInterceptor,
       multi: true
     }
   ],
-
+  bootstrap: [AppComponent],
   exports: [ShowForRolesDirective],
 })
 export class AppModule {}

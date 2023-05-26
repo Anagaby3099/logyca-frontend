@@ -21,7 +21,8 @@ export class AuthenticationService {
     const url = AppConfig.API_ENDPOINT;
 
     console.log("credentials", url);
-    this.http.post<any>(`${url}/`, {}, {})
+ 
+    this.http.post<any>(`${url}/login`, {}, {})
     this.redirectToDashboard();
   }
 

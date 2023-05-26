@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './indicators.component.html',
   styleUrls: ['./indicators.component.scss'],
 })
-export class IndicatorsComponent {
+export class IndicatorsComponent{
   constructor() {}
 }
