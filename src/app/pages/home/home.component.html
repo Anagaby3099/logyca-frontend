@@ -1,38 +1,38 @@
 <!-- top navbar -->
-<nav class="navbar sidenav">
-  <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center text-decoration-none">
-      <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
+<nav>
+  <mat-toolbar>
+    <button mat-icon-button aria-label="Menú" (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Agotados</span>
+    <span class="spacer"></span>
+    <ng-template [ngIf]="!isMobile">
+      <button mat-button color="link" aria-label="Cambiar idioma">
+        <mat-icon class="fa fa-globe"></mat-icon>
+        ES
       </button>
-      <span class="mx-2 fw-bolder text-decoration-none">AGOTADOS</span>
-    </a>
-    <form class="d-flex" role="search">
-      <a
-        href="#"
-        class="d-flex text-decoration-none align-items-center"
-        style="color: inherit"
-      >
-        <span class="fa fa-globe"></span>
-        <p class="m-0 px-2">ES</p>
-      </a>
-      <button
-        type="button"
-        (click)="logout()"
-        class="align-items-center btn btn-light d-flex flex-row"
-      >
-        <span class="fa fa-right-from-bracket"></span>
-        <p class="m-0 px-2">Cerrar sesión</p>
+      <button mat-button color="link" aria-label="Cerrar sesión">
+        <mat-icon class="fa fa-right-from-bracket"></mat-icon>
+        Cerrar sesión
       </button>
-    </form>
-  </div>
+    </ng-template>
+
+    <ng-template [ngIf]="isMobile">
+      <button mat-icon-button matTooltip="Idioma" color="link">
+        <mat-icon class="fa fa-globe"></mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Cerrar sesión" color="link">
+        <mat-icon class="fa fa-right-from-bracket"></mat-icon>
+      </button>
+    </ng-template>
+  </mat-toolbar>
 </nav>
 
 <mat-sidenav-container class="container-content">
   <mat-sidenav
     #sidenav
-    [mode]="mobileQuery.matches ? 'over' : 'side'"
-    [fixedInViewport]="mobileQuery.matches"
+    [mode]="isMobile ? 'over' : 'side'"
+    [fixedInViewport]="isMobile"
     opened
     class="sidenav-panel"
   >

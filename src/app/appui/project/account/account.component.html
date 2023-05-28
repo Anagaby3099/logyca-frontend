@@ -1,140 +1,142 @@
-<section class="section__header">
-  <section class="section__title">
-    <span class="fa fa-right-from-bracket"></span>
-    <h4>Configuración</h4>
+<div class="">
+  <section class="section__header">
+    <section class="section__title">
+      <span class="fa fa-right-from-bracket"></span>
+      <h4>Configuración</h4>
+    </section>
+
+    <p class="section__txt">Aquí se encuentra tu información de cuenta</p>
   </section>
 
-  <p class="section__txt">Aquí se encuentra tu información de cuenta</p>
-</section>
+  <section>
+    <!-- section info account -->
+    <section class="section">
+      <p>Información de cuenta</p>
+      <form [formGroup]="myForm">
+        <mat-grid-list
+          [cols]="breakpoint"
+          rowHeight="90px"
+          (window:resize)="onResize($event)"
+        >
+          <mat-grid-tile colspan="1" class="justify-start">
+            <mat-form-field class="form-field">
+              <mat-label>Nombre</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="name"
+                placeholder="Nombre"
+              />
+              <mat-error
+                *ngIf="myForm.hasError('name') && !myForm.hasError('required')"
+              >
+                Please enter a name
+              </mat-error>
+              <mat-error *ngIf="myForm.hasError('required')">
+                Name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1" class="justify-start">
+            <mat-form-field class="form-field">
+              <mat-label>Cargo</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="position"
+                placeholder="Cargo"
+              />
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+          <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+          <mat-grid-tile class="justify-start">
+            <mat-form-field class="form-field">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="email"
+                placeholder="Email"
+              />
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile class="justify-start">
+            <mat-form-field class="form-field">
+              <mat-label>Teléfono</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="phone"
+                placeholder="Teléfono"
+              />
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+          <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+          <mat-grid-tile class="justify-start">
+            <mat-form-field class="form-field">
+              <mat-label>Compañia</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="company"
+                placeholder="Compañia"
+              />
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile class="justify-start">
+            <mat-form-field class="form-field">
+              <mat-label>Rol</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="rol"
+                placeholder="Rol"
+              />
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+    </section>
 
-<section>
-  <!-- section info account -->
-  <section class="section">
-    <p>Información de cuenta</p>
-    <form [formGroup]="myForm">
-      <mat-grid-list
-        [cols]="breakpoint"
-        rowHeight="90px"
-        (window:resize)="onResize($event)"
-      >
-        <mat-grid-tile colspan="1" class="justify-start">
-          <mat-form-field class="form-field">
-            <mat-label>Nombre</mat-label>
-            <input
-              matInput
-              type="text"
-              formControlName="name"
-              placeholder="Nombre"
-            />
-            <mat-error
-              *ngIf="myForm.hasError('name') && !myForm.hasError('required')"
-            >
-              Please enter a name
-            </mat-error>
-            <mat-error *ngIf="myForm.hasError('required')">
-              Name is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="1" class="justify-start">
-          <mat-form-field class="form-field">
-            <mat-label>Cargo</mat-label>
-            <input
-              matInput
-              type="text"
-              formControlName="position"
-              placeholder="Cargo"
-            />
-          </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="1"> </mat-grid-tile>
-        <mat-grid-tile colspan="1"> </mat-grid-tile>
-        <mat-grid-tile class="justify-start">
-          <mat-form-field class="form-field">
-            <mat-label>Email</mat-label>
-            <input
-              matInput
-              type="text"
-              formControlName="email"
-              placeholder="Email"
-            />
-          </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile class="justify-start">
-          <mat-form-field class="form-field">
-            <mat-label>Teléfono</mat-label>
-            <input
-              matInput
-              type="text"
-              formControlName="phone"
-              placeholder="Teléfono"
-            />
-          </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="1"> </mat-grid-tile>
-        <mat-grid-tile colspan="1"> </mat-grid-tile>
-        <mat-grid-tile class="justify-start">
-          <mat-form-field class="form-field">
-            <mat-label>Compañia</mat-label>
-            <input
-              matInput
-              type="text"
-              formControlName="company"
-              placeholder="Compañia"
-            />
-          </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile class="justify-start">
-          <mat-form-field class="form-field">
-            <mat-label>Rol</mat-label>
-            <input
-              matInput
-              type="text"
-              formControlName="rol"
-              placeholder="Rol"
-            />
-          </mat-form-field>
-        </mat-grid-tile>
-      </mat-grid-list>
-    </form>
-  </section>
-
-  <!-- section plans -->
-  <section class="section">
-    <p>Mis planes logyca</p>
-    <div class="d-flex">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>Plan A</mat-card-title>
-          <mat-card-subtitle>Categoría: Producto</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>1-5 productos</p>
-          <div class="row">
-            <span>1 año de servicio</span>
-            <div class="col-6">
-              <span>Inicio en: 21/03/2022</span>
+    <!-- section plans -->
+    <section class="section">
+      <p>Mis planes logyca</p>
+      <div class="d-flex">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Plan A</mat-card-title>
+            <mat-card-subtitle>Categoría: Producto</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>1-5 productos</p>
+            <div class="row">
+              <span>1 año de servicio</span>
+              <div class="col-6">
+                <span>Inicio en: 21/03/2022</span>
+              </div>
+              <div class="col-6">
+                <span> Termina en: 19/03/2024 </span>
+              </div>
             </div>
-            <div class="col-6">
-              <span> Termina en: 19/03/2024 </span>
-            </div>
-          </div>
-          <p>20 usuarios</p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button class="mat-button-primary">Actualizar plan</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  </section>
+            <p>20 usuarios</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button class="mat-button-primary">Actualizar plan</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </section>
 
-  <!-- section buttons -->
-  <section class="d-flex my-4">
-    <button class="btn" style="background: #f24405; color: #fff" type="button">
-      Cambiar contraseña
-    </button>
-    <button type="button" class="mx-4 btn btn-outline-secondary">
-      Guardar cambios
-    </button>
+    <!-- section buttons -->
+    <section class="d-flex my-4">
+      <button class="btn" style="background: #f24405; color: #fff" type="button">
+        Cambiar contraseña
+      </button>
+      <button type="button" class="mx-4 btn btn-outline-secondary">
+        Guardar cambios
+      </button>
+    </section>
   </section>
-</section>
+</div>

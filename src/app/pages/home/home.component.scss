@@ -47,48 +47,10 @@
   }
 
 
-#navbarTogglerDemo01 {
-    height: 100vh;
-    text-align: center;
-    color: black;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-
-    a {
-        color: inherit;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        padding-left: 3rem;
-
-        p {
-            padding-left: 1rem;
-            padding-right: 1rem;
-            margin-bottom: 0 !important;
-        }
-
-        &:hover {
-            color: #F48A54;
-            background-color: #F1F1F1;
-        }
-    }
-
-    .collapse {
-        padding-left: 4rem;
-    }
-}
-
 .hide {
     display: none !important;
 }
 
 @media (max-width: 770px) {
-    #navbarTogglerDemo01 {
-        height: fit-content;
-        margin-bottom: 2em;
-    }
+
 }
