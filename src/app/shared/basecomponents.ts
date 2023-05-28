@@ -1,5 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-base-comp',
@@ -16,4 +17,5 @@ export class BaseComponents {
     this.loadinglist = value;
   }
 
+  constructor(){}
 }
