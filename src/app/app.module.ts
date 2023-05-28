@@ -15,6 +15,7 @@ import { AccountModule } from './appui/project/account/account.module';
 // Interceptors
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { MobileDetectService } from './shared/mobiledetector';
 
 const APP_CONTAINERS = [HomeComponent, PageNotFoundComponent];
 
@@ -33,11 +34,12 @@ const APP_CONTAINERS = [HomeComponent, PageNotFoundComponent];
     ShowForRolesDirective,
   ],
   providers: [
+    MobileDetectService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }
+    },
   ],
   bootstrap: [AppComponent],
   exports: [ShowForRolesDirective],
