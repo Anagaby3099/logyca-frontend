@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { BaseComponents } from '@app/shared/basecomponents';
 import { MobileDetectService } from '@app/shared/mobiledetector';
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.scss'],
 })
-export class AccountComponent extends BaseComponents implements OnInit {
+export class AccountComponent extends BaseComponents implements OnInit, OnDestroy {
   breakpoint!: number;
   isMobile!: boolean;
   isMobileSubscription!: Subscription; 
@@ -29,6 +29,13 @@ export class AccountComponent extends BaseComponents implements OnInit {
       (error) => console.log("-- Error detecting device --", error)
     )
   }
+
+  ngOnDestroy(){
+    if(this.isMobileSubscription){
+      this.isMobileSubscription.unsubscribe();
+    }
+  }
+
 
   onResize(event: any) {
     this.breakpoint = event.target.innerWidth <= 700 ? 1 : 4;
