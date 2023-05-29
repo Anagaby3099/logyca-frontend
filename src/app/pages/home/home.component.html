@@ -28,75 +28,73 @@
   </mat-toolbar>
 </nav>
 
-<mat-sidenav-container class="container-content">
+<mat-sidenav-container>
   <mat-sidenav
     #sidenav
     [mode]="isMobile ? 'over' : 'side'"
     [fixedInViewport]="isMobile"
     opened
-    class="sidenav-panel"
+    class="sidenav__panel"
   >
-    <div class="mt-4 text-center">
-      <img [src]="rutaImg" class="rounded-circle" alt="" />
+    <div class="sidenav__panel-user">
+      <img class="user-img" [src]="rutaImg" alt="user_img" />
       <h4>Marcela Méndez</h4>
       <h6>Administrador</h6>
     </div>
-
     <mat-nav-list>
-      <a routerLink="/indicadores" mat-list-item>
-        <span>Indicadores</span>
-      </a>
+        <a routerLink="/indicadores" mat-list-item>
+          <span>Indicadores</span>
+        </a>
+        <mat-accordion>
+          <mat-expansion-panel
+            class="mat-expansion-panel-custom mat-elevation-z0"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <span>Operaciones</span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+              <a mat-list-item [routerLink]="['/operaciones', 'parametrizacion']"
+                >Parametrización</a
+              >
+              <a
+                *appShowForRoles="['Accounting']"
+                mat-list-item
+                [routerLink]="['/operaciones', 'vectorizacion']"
+                >Vectorización</a
+              >
+              <a mat-list-item [routerLink]="['/operaciones', 'cronograma']"
+                >Cronograma</a
+              >
+              <a mat-list-item [routerLink]="['/operaciones', 'medicion']"
+                >Medición</a
+              >
+              <a mat-list-item [routerLink]="['/operaciones', 'solicitudes']">
+                Solicitud de estado
+              </a>
+              <a mat-list-item [routerLink]="['/operaciones', 'productos']"
+                >Productos</a
+              >
+            </mat-nav-list>
+          </mat-expansion-panel>
+        </mat-accordion>
 
-      <mat-accordion>
-        <mat-expansion-panel
-          class="mat-expansion-panel-custom mat-elevation-z0"
-        >
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <span>Operaciones</span>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <mat-nav-list>
-            <a mat-list-item [routerLink]="['/operaciones', 'parametrizacion']"
-              >Parametrización</a
-            >
-            <a
-              *appShowForRoles="['Accounting']"
-              mat-list-item
-              [routerLink]="['/operaciones', 'vectorizacion']"
-              >Vectorización</a
-            >
-            <a mat-list-item [routerLink]="['/operaciones', 'cronograma']"
-              >Cronograma</a
-            >
-            <a mat-list-item [routerLink]="['/operaciones', 'medicion']"
-              >Medición</a
-            >
-            <a mat-list-item [routerLink]="['/operaciones', 'solicitudes']">
-              Solicitud de estado
-            </a>
-            <a mat-list-item [routerLink]="['/operaciones', 'productos']"
-              >Productos</a
-            >
-          </mat-nav-list>
-        </mat-expansion-panel>
-      </mat-accordion>
+        <a routerLink="./administracion" mat-list-item>
+          <span>Usuarios</span>
+        </a>
 
-      <a routerLink="./administracion" mat-list-item>
-        <span>Usuarios</span>
-      </a>
+        <a routerLink="./centro-de-soluciones" mat-list-item>
+          <span>Centro de soluciones</span>
+        </a>
 
-      <a routerLink="./centro-de-soluciones" mat-list-item>
-        <span>Centro de soluciones</span>
-      </a>
-
-      <a routerLink="./cuenta" mat-list-item>
-        <span>Cuenta</span>
-      </a>
+        <a routerLink="./cuenta" mat-list-item>
+          <span>Cuenta</span>
+        </a>
     </mat-nav-list>
-
-    <div class="logo-absolute text-center">
-      <img src="../../../assets/logo-small.png" alt="logo" />
+    <div class="mat-nav__logo">
+        <mat-divider></mat-divider>
+        <img class="logo" src="../../../assets/logo-small.png" alt="logo" />  
     </div>
   </mat-sidenav>
 

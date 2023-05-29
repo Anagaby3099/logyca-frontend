@@ -3,23 +3,39 @@
     background-color: #e2e2e2;
 }
 
-.sidenav-panel {
+.sidenav__panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidenav__panel-user {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 300px;
+    min-width: 300px;
+    margin: 40px 0px;  
+
+    .user-img {
+      width: 90px;
+      border-radius: 50%;
+    }
+}
+
+.mat-nav__logo {
+  min-width: 300px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.logo {
+  width: 145px;
+  padding: 16px;
 }
 
 .container-app {
     background: #F1F1F1;
     height: calc(100vh - 84px); 
-}
-
-.logo-absolute {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .mat-expansion-panel-custom {
