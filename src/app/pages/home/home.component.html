@@ -42,7 +42,8 @@
       <h6>Administrador</h6>
     </div>
     <mat-nav-list>
-        <a routerLink="/indicadores" mat-list-item>
+        <a class="nav-list__item" routerLink="/indicadores" mat-list-item>
+          <img src="../../../assets/icons/grid_view.png"/>
           <span>Indicadores</span>
         </a>
         <mat-accordion>
@@ -50,16 +51,16 @@
             class="mat-expansion-panel-custom mat-elevation-z0"
           >
             <mat-expansion-panel-header>
-              <mat-panel-title>
+              <mat-panel-title class="nav-list__item">
+                <img src="../../../assets/icons/grid_view.png"/>
                 <span>Operaciones</span>
               </mat-panel-title>
             </mat-expansion-panel-header>
             <mat-nav-list>
-              <a mat-list-item [routerLink]="['/operaciones', 'parametrizacion']"
-                >Parametrización</a
-              >
+              <a mat-list-item [routerLink]="['/operaciones', 'parametrizacion']">
+                Parametrización
+              </a>
               <a
-                *appShowForRoles="['Accounting']"
                 mat-list-item
                 [routerLink]="['/operaciones', 'vectorizacion']"
                 >Vectorización</a
@@ -80,15 +81,18 @@
           </mat-expansion-panel>
         </mat-accordion>
 
-        <a routerLink="./usuarios" mat-list-item>
+        <a class="nav-list__item" routerLink="./usuarios" mat-list-item>
+          <img src="../../../assets/icons/group.png"/>
           <span>Usuarios</span>
         </a>
 
-        <a routerLink="./centro-soluciones" mat-list-item>
+        <a class="nav-list__item" routerLink="./centro-soluciones" mat-list-item>
+          <img src="../../../assets/icons/headset_mic.png"/>
           <span>Centro de soluciones</span>
         </a>
 
-        <a routerLink="./cuenta" mat-list-item>
+        <a class="nav-list__item" routerLink="./cuenta" mat-list-item>
+          <img src="../../../assets/icons/account_circle.png"/>
           <span>Cuenta</span>
         </a>
     </mat-nav-list>
