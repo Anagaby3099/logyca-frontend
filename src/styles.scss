@@ -37,14 +37,17 @@ $teal-a400: #1de9b6 !default;
 $teal-a700: #00bfa5 !default;
 $teal: $teal-500 !default;
 
-
 html,
 body {
     height: 100%;
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Museo Sans';
     background-color: $gray-color;
 }
+
+
+
+
 .spacer {
     flex: 1 1 auto;
 }
