@@ -1,0 +1,22 @@
+.navigator-title {
+
+    &:hover,
+    &:active {
+        color: #F48A54;
+        border-bottom: 2px solid #F48A54;
+        cursor: pointer;
+    }
+
+}
+
+.active {
+    color: #F48A54;
+    border-bottom: 2px solid #F48A54;
+    cursor: pointer;
+}
+
+.section__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}

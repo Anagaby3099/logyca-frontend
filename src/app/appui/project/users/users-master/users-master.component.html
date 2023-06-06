@@ -1,0 +1,28 @@
+<section class="section__header">
+  <section class="section__title">
+    <span class="fa fa-right-from-bracket"></span>
+    <h4>Usuarios</h4>
+  </section>
+
+  <p class="section__txt">
+    Aquí podrás encontrar información sobre cada usuario de la empresa
+    y sus permisos.
+  </p>
+
+  <div class="section__buttons">
+    <button mat-raised-button color="primary">
+      Crear usuario
+    </button>
+  </div>
+</section>
+
+<div>
+  <mat-tab-group
+    mat-stretch-tabs="false"
+    mat-align-tabs="start"
+  >
+    <mat-tab label="Gestión de usuarios">
+      <app-users-list></app-users-list>
+    </mat-tab>
+  </mat-tab-group>
+</div>
