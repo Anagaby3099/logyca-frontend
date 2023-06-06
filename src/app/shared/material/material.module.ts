@@ -16,6 +16,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   exports: [
@@ -35,7 +36,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSortModule
   ],
 })
 export class MaterialModule {}
