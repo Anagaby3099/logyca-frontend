@@ -35,7 +35,6 @@
 
   <div class="table-responsive">
     <table mat-table [dataSource]="data" class="table table-hover">
-      <caption>Datos</caption>
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef id="idNum">#</th>
         <td mat-cell *matCellDef="let item">{{ item?.id }}</td>
