@@ -17,4 +17,8 @@ export class UsersMasterComponent implements OnInit {
   onResize(event: any) {
     this.breakpoint = event.target.innerWidth <= 700 ? 1 : 2;
   }
+
+  goToCreateUser(){
+    this.router.navigateByUrl('usuarios/crear');
+  }
 }
