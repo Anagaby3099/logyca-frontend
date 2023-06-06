@@ -1,0 +1,113 @@
+<section>
+  <form [formGroup]="myForm">
+    <mat-grid-list
+      [cols]="breakpoint"
+      rowHeight="90px"
+      (window:resize)="onResize($event)"
+    >
+      <mat-grid-tile colspan="1" class="justify-start">
+        <mat-form-field class="form-field">
+          <mat-label>Nombre completo</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="name"
+            placeholder="Nombre"
+          />
+          <mat-error
+            *ngIf="myForm.hasError('name') && !myForm.hasError('required')"
+          >
+            Please enter a name
+          </mat-error>
+          <mat-error *ngIf="myForm.hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" class="justify-start">
+        <mat-form-field class="form-field">
+          <mat-label>Cargo</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="position"
+            placeholder="Cargo"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+      <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+      <mat-grid-tile class="justify-start">
+        <mat-form-field class="form-field">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="email"
+            placeholder="Email"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile class="justify-start">
+        <mat-form-field class="form-field">
+          <mat-label>Teléfono</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="phone"
+            placeholder="Teléfono"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+      <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+      <mat-grid-tile class="justify-start">
+        <mat-form-field class="form-field">
+          <mat-label>Empresa</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="company"
+            placeholder="Compañia"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+      <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+      <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+      <mat-grid-tile class="justify-start">
+       
+          <mat-slide-toggle color="primary" formControlName="company" name="enableWifi">Estado de usuario</mat-slide-toggle>
+      </mat-grid-tile>
+      <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+      <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+      <mat-grid-tile *ngIf="!isMobile" colspan="1"> </mat-grid-tile>
+      <mat-grid-tile class="justify-start">
+        <mat-form-field class="form-field">
+          <mat-label>Rol</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="rol"
+            placeholder="Rol"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile class="justify-start">
+        <button mat-raised-button color="link">
+          Crear rol
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form>
+
+
+      <section>
+        <button mat-raised-button color="link">
+          Cancelar
+        </button>
+        <button mat-raised-button color="primary">
+          Crear usuario
+        </button>
+      </section>
+</section>
