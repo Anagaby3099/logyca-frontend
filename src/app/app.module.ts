@@ -16,7 +16,6 @@ import { AccountModule } from './appui/project/account/account.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { MobileDetectService } from './shared/mobiledetector';
-import { UsersComponent } from './appui/project/users/users.component';
 import { SolutionCenterComponent } from './appui/project/solution-center/solution-center.component';
 
 const APP_CONTAINERS = [HomeComponent, PageNotFoundComponent];
@@ -34,7 +33,6 @@ const APP_CONTAINERS = [HomeComponent, PageNotFoundComponent];
     APP_CONTAINERS,
     LoginComponent,
     ShowForRolesDirective,
-    UsersComponent,
     SolutionCenterComponent,
   ],
   providers: [
