@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AuthenticationService } from '@app/auth/service/auth.service';
+import { AuthenticationService } from '@app/services/auth.service';
 import { IRuta, ROUTES_CONFIG } from '@app/constantes/routes.const';
 import { MobileDetectService } from '@app/shared/mobiledetector';
 import { Subscription } from 'rxjs';

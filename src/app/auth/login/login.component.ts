@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthenticationService } from '../service/auth.service';
+import { AuthenticationService } from '../../services/auth.service';
 import { User } from '@app/models';
 import { LoginCredentials } from '@app/models/login-credentials.model';
 import { finalize } from 'rxjs';
