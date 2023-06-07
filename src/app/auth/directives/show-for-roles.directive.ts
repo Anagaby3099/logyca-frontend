@@ -1,7 +1,7 @@
 import { Directive, Input, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 import { Role } from '@app/models';
 import { Subscription, map, tap } from 'rxjs';
-import { AuthenticationService } from '../service/auth.service';
+import { AuthenticationService } from '../../services/auth.service';
 
 @Directive({
   selector: '[appShowForRoles]',

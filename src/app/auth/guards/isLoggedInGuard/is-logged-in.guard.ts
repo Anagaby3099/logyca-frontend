@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '@app/auth/service/auth.service';
+import { AuthenticationService } from '@app/services/auth.service';
 import { take, tap } from 'rxjs';
 
 export const AuthGuard = () => {
