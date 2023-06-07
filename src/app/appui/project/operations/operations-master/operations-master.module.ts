@@ -8,6 +8,7 @@ import { RequestModule } from '../request/request.module';
 import { ScheduleModule } from '../schedule/schedule.module';
 import { VectorizationModule } from '../vectorization/vectorization.module';
 import { OperationsMasterComponent } from './operations-master.component';
+import { TranslateModuleExport } from '@app/shared/translate.module';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { OperationsMasterComponent } from './operations-master.component';
     RequestModule,
     ScheduleModule,
     VectorizationModule,
+    TranslateModuleExport
   ],
   declarations: [OperationsMasterComponent],
   exports: [],

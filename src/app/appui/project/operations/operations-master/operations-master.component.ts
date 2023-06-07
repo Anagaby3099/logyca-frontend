@@ -1,23 +1,33 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { BaseComponents } from '@app/shared/basecomponents';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-operations-master',
   templateUrl: './operations-master.component.html',
   styleUrls: ['./operations-master.component.scss'],
 })
-export class OperationsMasterComponent implements OnInit {
+export class OperationsMasterComponent extends BaseComponents implements OnInit {
   @Input() rutaSeleccionada: string = new Input();
 
   isCollapsed: boolean = false;
   selected_index: number = 0;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public translate: TranslateService ) {
+    super();
+    this.onInitTranslate();
+  }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(
       (route) => (this.selected_index = this.tabChangeSelection(route))
     );
+  }
+
+  onInitTranslate(){
+    const browser_lang = this.translate.getBrowserLang();
+    this.translate.use(browser_lang?.match(/en|es/) ? browser_lang : 'en');
   }
 
   tabChangeSelection(params: Params) {
